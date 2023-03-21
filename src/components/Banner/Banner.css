@@ -1,8 +1,10 @@
 .banner{
-    background-color: #6278F7;
+    background: linear-gradient(135.76deg, #79434D 30.22%, #BD576A 70.23%, #9F1730 97.59%);
     text-align: center;
+
 }
 
 .banner img{
     max-width: 100%;
+ 
 }

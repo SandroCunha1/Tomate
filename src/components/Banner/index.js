@@ -4,8 +4,9 @@ import "./Banner.css"
 function Banner(){
    return (
     <header className="banner">
-    <img src="/imagens/banner.png" alt="Banner principal da página Organo."/>
+    <img src="/imagens/frame.png" alt="Banner principal da página Organo."/>
     </header>
+    
     )
 }
 
