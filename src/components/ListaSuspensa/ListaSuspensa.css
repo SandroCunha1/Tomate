@@ -1,0 +1,14 @@
+label{
+    display: block;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+select{
+    border: 0px;
+    background-color: #FFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 24px;
+    font-size: 24px;
+    box-sizing: border-box;
+}

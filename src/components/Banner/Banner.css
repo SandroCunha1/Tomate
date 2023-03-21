@@ -1,10 +1,7 @@
+
+
 .banner{
-    background: linear-gradient(135.76deg, #79434D 30.22%, #BD576A 70.23%, #9F1730 97.59%);
-    text-align: center;
-
-}
-
-.banner img{
     max-width: 100%;
- 
+    width: 100vw;
+    min-height: 200px;
 }
