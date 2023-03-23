@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
 
-const Formulario = () => {
+const Formulario = (props) => {
     const times = [
         'Shopping',
         'Viagens',
@@ -19,17 +19,24 @@ const Formulario = () => {
     const [img, setImg] = useState("")
     const [momento, setMomento] = useState("")
 
+
+
    //Ao clicar em submit:
     const toSave = (e) => {
         e.preventDefault()
-        console.log('Form foi submetido =>', nome, desc, img)
+        props.momentRegister({
+            nome,
+            desc,
+            img,
+            momento
+        })
     }
 
     return (
         <section className='formulario'>
             <form onSubmit={toSave}>
 
-                <h2>Preencha os dados para criar um momento</h2>
+                <h2>Salve um <span>momento</span></h2>
 
                 <CampoTexto 
                 obrigatorio={true} 

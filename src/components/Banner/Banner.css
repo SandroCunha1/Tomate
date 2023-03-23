@@ -1,7 +1,37 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
 
 .banner{
     max-width: 100%;
     width: 100vw;
     min-height: 200px;
+    height: 50vh;
+    background: #c31432; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c31432, #240b36); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c31432, #240b36);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img{
+    position: absolute;
+    max-width: 150px;
+    top: 20px;
+    left: 20px;
+}
+
+.banner h1{
+ text-align: center;
+ font-family: 'Caveat', cursive;
+ font-size: 60px;
+ color: white;
+ text-shadow: 0 0 10px #FFFFFF;
+
 }

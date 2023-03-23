@@ -18,4 +18,9 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 700;
     font-size: 30px;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #aa2b24, 0 0 30px #aa2b24, 0 0 40px #aa2b24, 0 0 55px #aa2b24, 0 0 75px #aa2b24;
+}
+.formulario h2 span{
+    color: rgb(0, 0, 0);
+    
 }

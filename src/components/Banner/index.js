@@ -3,8 +3,12 @@ import "./Banner.css"
 
 function Banner(){
    return (
-    <header>
-    <img className="banner" src="/imagens/frame.png" alt="Banner principal da página Organo."/>
+    <header className="banner">
+
+      <img src="./imagens/Logo.svg"/>
+      <div>
+      <h1>Nossos Momentos <br/> Juntos </h1>
+      </div>
     </header>
     
     )
