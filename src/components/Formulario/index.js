@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
@@ -5,15 +6,7 @@ import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
 
 const Formulario = (props) => {
-    const times = [
-        'Shopping',
-        'Viagens',
-        'Social',
-        'Em casa',
-        'Restaurantes',
-        'Aniversários'
-    ]
-    
+   
     const [nome, setNome] = useState("")
     const [desc, setDesc] = useState("")
     const [img, setImg] = useState("")
@@ -65,7 +58,7 @@ const Formulario = (props) => {
                 <ListaSuspensa 
                 obrigatorio={true} 
                 label="Tipos de momentos"
-                itens={times}
+                itens={props.times}
                 value={momento}
                 changed={valor => setMomento(valor)}
                 />

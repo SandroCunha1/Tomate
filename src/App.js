@@ -1,43 +1,44 @@
+import React from 'react'
 import { useState } from 'react';
 import Banner from './components/Banner';
 import Formulario from './components/Formulario';
-import Time from './components/Time';
+import Momento from './components/Momentos';
 
 function App() {
 
   const times = [
     {
       nome:'Viagens',
-      corPrimaria:'#f127117e',
-      corSecundaria:'linear-gradient(to right, #f5af1970, #f127117e)',
+      corPrimaria:'#f12711',
+      corSecundaria:'#f127117e',
     },
     {
       nome:'Shopping',
-      corPrimaria:'#f127117e',
-      corSecundaria:'linear-gradient(to right, #f5af1970, #f127117e)',
+      corPrimaria:'#f5af19',
+      corSecundaria:'#f5af197e',
     },
     {
       nome:'Social',
-      corPrimaria:'#f127117e',
-      corSecundaria:'linear-gradient(to right, #f5af1970, #f127117e)',
+      corPrimaria:'#93291e',
+      corSecundaria:'#ed213a7e  ',
     },
     {
       nome:'Em casa',
-      corPrimaria:'#f127117e',
-      corSecundaria:'linear-gradient(to right, #f5af1970, #f127117e)',
+      corPrimaria:'#eaafc8',
+      corSecundaria:'#654ea37e',
     },
     {
       nome:'Restaurantes',
-      corPrimaria:'#f127117e',
-      corSecundaria:'linear-gradient(to right, #f5af1970, #f127117e)',
+      corPrimaria:'#ff4b2b',
+      corSecundaria:'#ff4b2b7e',
     },
     {
       nome:'Aniversários',
-      corPrimaria:'#f127117e',
-      corSecundaria:'linear-gradient(to right, #f5af1970, #f127117e)',
+      corPrimaria:'#f27121',
+      corSecundaria:'#e940577e',
     }
   ]
-
+//
   const [moments, setMoments] = useState([])
 
   const addNewMoment = (moment) => {
@@ -47,9 +48,16 @@ function App() {
   return (
     <div className="App">
       <Banner />  
-      <Formulario momentRegister={moment => addNewMoment(moment)}/>
-      <Time nome="Social"/>
-      <Time nome="Shopping"/>
+      <Formulario times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)}/>
+      
+      {times.map(time => 
+      <Momento key={time.nome} 
+      nome={time.nome} 
+      corPrimaria={time.corPrimaria} 
+      corSecundaria={time.corSecundaria}
+      momentos={moments.filter(moment => moment.momento == time.nome)}
+      />)}
+    
     </div>
     
   );
