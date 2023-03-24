@@ -51,11 +51,12 @@ function App() {
       <Formulario times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)}/>
       
       {times.map(time => 
-      <Momento key={time.nome} 
+      <Momento 
+      key={time.nome} 
       nome={time.nome} 
       corPrimaria={time.corPrimaria} 
       corSecundaria={time.corSecundaria}
-      momentos={moments.filter(moment => moment.momento == time.nome)}
+      momentos={moments.filter(moment => moment.momento === time.nome)}
       />)}
     
     </div>

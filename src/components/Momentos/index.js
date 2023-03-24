@@ -10,6 +10,8 @@ const Momento = (props) => {
     <div className='cards'>
     {props.momentos.map( momento => 
     <Card 
+    key={momento.nome}
+    corFundo={props.corPrimaria}
     nomeMomento={momento.nome} 
     descMomento={momento.desc}
     imgMomento={momento.img}
