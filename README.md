@@ -1,6 +1,6 @@
-# Organo
+# Tomate <3
 
-Um projetinho react para organização.
+Projeto para salvar momentos. 
 
 ## Available Scripts
 
