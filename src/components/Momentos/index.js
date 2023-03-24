@@ -4,7 +4,8 @@ import './Momento.css'
 
 const Momento = (props) => {
     return(
-   <section className='time' style={{ backgroundColor: props.corSecundaria }}>
+    props.momentos.length > 0? 
+    <section className='time' style={{ backgroundColor: props.corSecundaria }}>
     <h3 style={{ borderColor: props.corPrimaria}}>{props.nome}</h3>
     <div className='cards'>
     {props.momentos.map( momento => 
@@ -14,7 +15,8 @@ const Momento = (props) => {
     imgMomento={momento.img}
     />)}
     </div>
-   </section>)
+   </section>:
+   <section></section>)
 }
 
 export default Momento;
