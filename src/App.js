@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import Banner from './components/Banner';
+import Footer from './components/Footer';
 import Formulario from './components/Formulario';
 import Momento from './components/Momentos';
 
@@ -48,8 +49,8 @@ function App() {
   return (
     <div className="App">
       <Banner />  
-      <Formulario times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)}/>
-      
+      <Formulario display={""} times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)}/>
+
       {times.map(time => 
       <Momento 
       key={time.nome} 
@@ -58,6 +59,8 @@ function App() {
       corSecundaria={time.corSecundaria}
       momentos={moments.filter(moment => moment.momento === time.nome)}
       />)}
+    
+      <Footer/>
     
     </div>
     

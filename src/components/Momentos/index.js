@@ -6,7 +6,8 @@ const Momento = (props) => {
     return(
     props.momentos.length > 0? 
     <section className='time' style={{ backgroundColor: props.corSecundaria }}>
-    <h3 style={{ borderColor: props.corPrimaria}}>{props.nome}</h3>
+    <h3 >{props.nome}<span style={{ borderColor: props.corPrimaria}}></span></h3>
+    
     <div className='cards'>
     {props.momentos.map( momento => 
     <Card 

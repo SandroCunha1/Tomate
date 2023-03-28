@@ -1,13 +1,16 @@
-# Tomate
+# Tomate <3
 
 Projeto para salvar momentos. 
 
+<<<<<<< refs/remotes/origin/master
 ## Link
 <a href="https://tomate-sandrocunha1.vercel.app/ target="_blank"> tomate-sandrocunha1.vercel.app </a>
 
 
 
 
+=======
+>>>>>>> Icon and Footer add
 ## Available Scripts
 
 In the project directory, you can run:
