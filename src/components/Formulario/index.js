@@ -30,7 +30,8 @@ const Formulario = (props) => {
     }
 
     return (
-        <section className='formulario'>
+    
+        <section className='formulario' style={{display:props.display}}>
             <form onSubmit={toSave}>
 
                 <h2>Salve um <span>momento</span></h2>
