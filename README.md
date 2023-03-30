@@ -4,7 +4,7 @@ Projeto para salvar momentos.
 
 <<<<<<< refs/remotes/origin/master
 ## Link
-<a href="https://tomate-sandrocunha1.vercel.app/ target="_blank"> tomate-sandrocunha1.vercel.app </a>
+https://tomate-sandrocunha1.vercel.app/
 
 
 
