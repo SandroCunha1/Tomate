@@ -4,6 +4,7 @@ import './Card.css'
 const Card= (props) => {
         return(
             <div className='colaborador'>
+                <div className='deletar' onClick={props.delet}>x</div>
                 <div className='cabecalho' style={{backgroundColor: props.corFundo}}>
                     <img src={props.imgMomento} alt={props.nomeMomento}/>
                 </div>             

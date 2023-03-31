@@ -16,6 +16,7 @@ const Momento = (props) => {
     nomeMomento={momento.nome} 
     descMomento={momento.desc}
     imgMomento={momento.img}
+    delet={props.delet}
     />)}
     </div>
    </section>:

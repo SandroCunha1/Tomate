@@ -46,6 +46,11 @@ function App() {
     console.log(moment)
     setMoments([...moments, moment])
   }
+  function deletCard(event){
+    const botao = event.target 
+    const pai = botao.parentNode
+    console.log(pai)
+  }
   return (
     <div className="App">
       <Banner />  
@@ -58,6 +63,7 @@ function App() {
       corPrimaria={time.corPrimaria} 
       corSecundaria={time.corSecundaria}
       momentos={moments.filter(moment => moment.momento === time.nome)}
+      delet={deletCard}
       />)}
     
       <Footer/>
