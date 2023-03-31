@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import AdicionarTipo from './components/AdicionarTipo';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Formulario from './components/Formulario';
@@ -41,21 +42,32 @@ function App() {
     console.log(moment)
     setMoments([...moments, moment])
   }
+
   function deletCard(event){
     const botao = event.target 
     const pai = botao.parentNode
     console.log(pai)
   }
+
   const [display, setDisplay] = useState("none")
- 
+  const [displayCreater, setDisplayCreater] = useState("none")
 
   function showForm(){
     display === "none" ? setDisplay("") : setDisplay("none")
+    displayCreater === "none" ? setDisplayCreater("none") : setDisplayCreater("none")
   }
+
+  function openCreateMoment(){
+    display === "none" ? setDisplay("") : setDisplay("none")
+    displayCreater === "none" ? setDisplayCreater("") : setDisplayCreater("none")
+  }
+
   return (
     <div className="App">
       <Banner />  
-      <Formulario display={display} times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)}/>
+      <Formulario display={display} times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)} openCreateMoment={openCreateMoment}/>
+       
+      <AdicionarTipo display={displayCreater}/>
        
       <MomentosHeader showForm={showForm}/>
       {times.map(time => 

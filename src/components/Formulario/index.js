@@ -66,6 +66,7 @@ const Formulario = (props) => {
                 itens={props.times}
                 value={momento}
                 changed={valor => setMomento(valor)}
+                openCreateMoment = {props.openCreateMoment}
                 />
 
                 <Botao>Salvar momento</Botao>
