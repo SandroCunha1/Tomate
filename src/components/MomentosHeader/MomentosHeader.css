@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+.moments-header{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    margin: 50px 0;
+}
+
+.moments-header h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.moments-header span{
+    text-align: center;
+    display: block;
+    width: 100px;
+    height: 6px;
+    background: linear-gradient(to right, #c31432, #240b36);
+    
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.moments-header button{
+    margin-left: auto;
+    position: absolute;
+    right: 16px;
+    font-family: 'Caveat', cursive;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    background: #c31432; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c31432, #240b36); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c31432, #240b36);
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.7);
+    transition: 500ms;
+}
+.moments-header button:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 600px) {
+    .moments-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .child1 {
+      order: 2;
+    }
+  
+    .child2 {
+    position: inherit;
+      order: 1;
+    }
+  }

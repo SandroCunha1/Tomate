@@ -4,39 +4,34 @@ import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Formulario from './components/Formulario';
 import Momento from './components/Momentos';
+import MomentosHeader from './components/MomentosHeader';
 
 function App() {
 
   const times = [
     {
       nome:'Viagens',
-      corPrimaria:'#f12711',
-      corSecundaria:'#f127117e',
+      corPrimaria:'#f12711'
     },
     {
       nome:'Shopping',
-      corPrimaria:'#f5af19',
-      corSecundaria:'#f5af197e',
+      corPrimaria:'#f5af19'
     },
     {
       nome:'Social',
-      corPrimaria:'#93291e',
-      corSecundaria:'#ed213a7e  ',
+      corPrimaria:'#93291e'
     },
     {
       nome:'Em casa',
-      corPrimaria:'#eaafc8',
-      corSecundaria:'#654ea37e',
+      corPrimaria:'#eaafc8'
     },
     {
       nome:'Restaurantes',
-      corPrimaria:'#ff4b2b',
-      corSecundaria:'#ff4b2b7e',
+      corPrimaria:'#ff4b2b'
     },
     {
       nome:'Aniversários',
-      corPrimaria:'#f27121',
-      corSecundaria:'#e940577e',
+      corPrimaria:'#f27121'
     }
   ]
 //
@@ -51,17 +46,23 @@ function App() {
     const pai = botao.parentNode
     console.log(pai)
   }
+  const [display, setDisplay] = useState("none")
+ 
+
+  function showForm(){
+    display === "none" ? setDisplay("") : setDisplay("none")
+  }
   return (
     <div className="App">
       <Banner />  
-      <Formulario display={""} times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)}/>
-
+      <Formulario display={display} times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)}/>
+       
+      <MomentosHeader showForm={showForm}/>
       {times.map(time => 
       <Momento 
       key={time.nome} 
       nome={time.nome} 
       corPrimaria={time.corPrimaria} 
-      corSecundaria={time.corSecundaria}
       momentos={moments.filter(moment => moment.momento === time.nome)}
       delet={deletCard}
       />)}
