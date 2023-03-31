@@ -11,7 +11,7 @@ const ListaSuspensa = (props) => {
             {props.itens.map(item => <option key={item}>{item}</option>)}
         </select>
         </div>
-        <button className='button' onClick={props.openCreateMoment}>+</button>
+        <button className='button' type='button' onClick={props.openCreateMoment}>+</button>
     </div>
    )
 }

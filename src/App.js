@@ -7,40 +7,32 @@ import Formulario from './components/Formulario';
 import Momento from './components/Momentos';
 import MomentosHeader from './components/MomentosHeader';
 
+
+
 function App() {
 
-  const times = [
-    {
-      nome:'Viagens',
-      corPrimaria:'#f12711'
-    },
-    {
-      nome:'Shopping',
-      corPrimaria:'#f5af19'
-    },
-    {
-      nome:'Social',
-      corPrimaria:'#93291e'
-    },
-    {
-      nome:'Em casa',
-      corPrimaria:'#eaafc8'
-    },
-    {
-      nome:'Restaurantes',
-      corPrimaria:'#ff4b2b'
-    },
-    {
-      nome:'Aniversários',
-      corPrimaria:'#f27121'
-    }
-  ]
+
+const timesLocal = JSON.parse(localStorage.getItem("itens")) || []
+const momentsLocal = JSON.parse(localStorage.getItem("momentsI")) || []
+
+  const [times, setTimes] = useState(timesLocal)
 //
-  const [moments, setMoments] = useState([])
+
+  const [moments, setMoments] = useState(momentsLocal)
+
 
   const addNewMoment = (moment) => {
     console.log(moment)
     setMoments([...moments, moment])
+    momentsLocal.push(moment)
+    localStorage.setItem("momentsI", JSON.stringify(momentsLocal)) 
+  }
+
+  const addNewTime = (time) => {
+    console.log(time)
+    setTimes([...times, time])
+    timesLocal.push(time)
+    localStorage.setItem("itens", JSON.stringify(timesLocal)) 
   }
 
   function deletCard(event){
@@ -48,6 +40,15 @@ function App() {
     const pai = botao.parentNode
     console.log(pai)
   }
+
+  function mudarCorDoTime(cor, nome) {
+    setTimes(times.map(time => {
+        if(time.nome=== nome) {
+            time.corPrimaria = cor;
+        }
+        return time;
+    }))};
+  
 
   const [display, setDisplay] = useState("none")
   const [displayCreater, setDisplayCreater] = useState("none")
@@ -57,7 +58,7 @@ function App() {
     displayCreater === "none" ? setDisplayCreater("none") : setDisplayCreater("none")
   }
 
-  function openCreateMoment(){
+  function CreateMoment(){
     display === "none" ? setDisplay("") : setDisplay("none")
     displayCreater === "none" ? setDisplayCreater("") : setDisplayCreater("none")
   }
@@ -65,15 +66,17 @@ function App() {
   return (
     <div className="App">
       <Banner />  
-      <Formulario display={display} times={times.map(time => time.nome)}momentRegister={moment => addNewMoment(moment)} openCreateMoment={openCreateMoment}/>
+      <Formulario display={display} times={times.map(time => time.nome)} momentRegister={moment => addNewMoment(moment)} openCreateMoment={CreateMoment}/>
        
-      <AdicionarTipo display={displayCreater}/>
+      <AdicionarTipo display={displayCreater} closeCreateMoment={CreateMoment} addNew={time =>addNewTime(time)}/>
        
-      <MomentosHeader showForm={showForm}/>
+      <MomentosHeader showForm={showForm} />
+
       {times.map(time => 
       <Momento 
       key={time.nome} 
       nome={time.nome} 
+      mudarCor={mudarCorDoTime}
       corPrimaria={time.corPrimaria} 
       momentos={moments.filter(moment => moment.momento === time.nome)}
       delet={deletCard}

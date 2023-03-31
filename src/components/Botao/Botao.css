@@ -7,11 +7,11 @@
     border: none;
     cursor: pointer;
     color: #FFF;
-    margin: 32px 0;
     transition: background 0.3s ease-in-out;
+    margin: 32px 0;
+    
 }
 .botao:hover{
     background: linear-gradient(to left, #c31432, #240b36);
     color: #ffffff;
-    background-color: #6e83eb;
 }

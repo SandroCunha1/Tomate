@@ -4,6 +4,9 @@
     margin: 80px 0;
 }
 .formCreat form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 80%;
     width: 1121px;
     background-color: #f2f2f2;
@@ -12,9 +15,32 @@
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
 }
 
-.colorPickerCreater{
+.color-picker{
+    align-self: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+    width: 20%;
+    min-width: 100px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid;
+    margin-bottom: 20px;
 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.save-moment{
+    background: linear-gradient(to right, #c31432, #240b36);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 32px;
+    border: none;
+    cursor: pointer;
+    color: #FFF;
+    transition: background 0.3s ease-in-out;
+}
+
+.save-moment:hover{
+    background: linear-gradient(to left, #c31432, #240b36);
 }
 
 

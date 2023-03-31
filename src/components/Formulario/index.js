@@ -69,7 +69,7 @@ const Formulario = (props) => {
                 openCreateMoment = {props.openCreateMoment}
                 />
 
-                <Botao>Salvar momento</Botao>
+                <Botao type="submit">Salvar momento</Botao>
             </form>
         </section>
     )
