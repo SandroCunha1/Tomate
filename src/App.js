@@ -35,10 +35,12 @@ const momentsLocal = JSON.parse(localStorage.getItem("momentsI")) || []
     localStorage.setItem("itens", JSON.stringify(timesLocal)) 
   }
 
-  function deletCard(event){
-    const botao = event.target 
-    const pai = botao.parentNode
-    console.log(pai)
+  function deletCard(id, index){
+    
+    console.log(id, index)
+    setMoments(moments.filter(moment => moment.nome !== id))
+    const deleted = momentsLocal.filter(moment => moment.nome !== id)
+    localStorage.setItem("momentsI", JSON.stringify(deleted)) 
   }
 
   function mudarCorDoTime(cor, nome) {
